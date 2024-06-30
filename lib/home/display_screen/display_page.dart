@@ -5,6 +5,7 @@ import 'package:zomato/utils/globle_values.dart';
 
 import '../../utils/globle_product_list.dart';
 import '../../utils/randome_list.dart';
+import '../cart_screen/cartpage.dart';
 import '../components/Containers.dart';
 class DisplayPage extends StatefulWidget {
   const DisplayPage({super.key});
@@ -221,6 +222,11 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                       productDetailsListJoin[index]['addProduct']=true;
                                                                       productDetailsListJoin[index]['addCart']=productListModelUseJoin!.foodListDetails[index].productPrice;
                                                                       emtyeProductList.add(productDetailsListJoin[index]);
+                                                                      total=0;
+                                                                      for(int i=0;i<emtyeProductList.length;i++)
+                                                                      {
+                                                                        total=emtyeProductList[i]['addCart']+total;
+                                                                      }
                                                                       // print(emtyeProductList[0]['addProduct']);
                                                                       // productDetailsListJoin[index]['addProduct']=false;
                                                                       // print(emtyeProductList[0]['addProduct']);
@@ -292,13 +298,17 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                         Row(
                                                                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                                                                           children: [
-                                                                            GestureDetector(
+                                                                            InkWell(
                                                                               onTap: () {
                                                                                 setState(() {
-
+                                                                                  total=0;
                                                                                   productDetailsListJoin[index]['quantity']=productDetailsListJoin[index]['quantity']+1;
                                                                                   productDetailsListJoin[index]['addProduct']=true;
                                                                                   productDetailsListJoin[index]['addCart']=productDetailsListJoin[index]['addCart']+productDetailsListJoin[index]['productPrice'];
+                                                                                  for(int i=0;i<emtyeProductList.length;i++)
+                                                                                    {
+                                                                                      total=total+emtyeProductList[i]['addCart'];
+                                                                                    }
                                                                                   // productListModelUseJoin!.foodListDetails[index].quantity=productListModelUseJoin!.foodListDetails[index].quantity!.toInt()+1;
                                                                                   // productListModelUseJoin!.foodListDetails[index].addProduct=true;
                                                                                   // productListModelUseJoin!.foodListDetails[index].addCart=(productListModelUseJoin!.foodListDetails[index].addCart!+productListModelUseJoin!.foodListDetails[index].productPrice!.toInt());
@@ -309,33 +319,37 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                               ),
                                                                             ),
                                                                             Container(
-                                                                              child: Text(productListModelUseJoin!.foodListDetails[index].quantity.toString(),style: const TextStyle(color: Colors.white,fontSize: 18,),),
+                                                                              child: Text(productDetailsListJoin[index]['quantity'].toString(),style: const TextStyle(color: Colors.white,fontSize: 18,),),
                                                                             ),
-                                                                            GestureDetector(
+                                                                            InkWell(
                                                                               onTap: () {
+                                                                                setState(() {
                                                                                   if(productDetailsListJoin[index]['quantity']!=0)
                                                                                     {
-                                                                                      productDetailsListJoin[index]['addCart']=(productListModelUseJoin!.foodListDetails[index].addCart!-productListModelUseJoin!.foodListDetails[index].productPrice!.toInt());
-                                                                                      productListModelUseJoin!.foodListDetails[index].quantity=productListModelUseJoin!.foodListDetails[index].quantity!.toInt()-1;
+                                                                                      productDetailsListJoin[index]['addCart']=productDetailsListJoin[index]['addCart']-productDetailsListJoin[index]['productPrice'];
+                                                                                      productDetailsListJoin[index]['quantity']=productDetailsListJoin[index]['quantity']-1;
                                                                                       // print(productListModelUseJoin!.foodListDetails[index].addCart);
                                                                                     }
-                                                                                  if(productListModelUseJoin!.foodListDetails[index].quantity==0)
+                                                                                  if(productDetailsListJoin[index]['quantity']==0)
+                                                                                  {
+                                                                                    productDetailsListJoin[index]['addProduct']=false;
+                                                                                    for(int i=0;i<emtyeProductList.length;i++)
                                                                                     {
-                                                                                      productListModelUseJoin!.foodListDetails[index].addProduct=false;
-                                                                                      for(int i=0;i<emtyeProductList.length;i++)
-                                                                                        {
-                                                                                          if(emtyeProductList[i]['addProduct']==false)
-                                                                                            {
-                                                                                              emtyeProductList.removeAt(i);
-                                                                                              print(emtyeProductList[i]['addProduct']);
-                                                                                            }
-                                                                                        }
+                                                                                      if(emtyeProductList[i]['addProduct']==false)
+                                                                                      {
+                                                                                        emtyeProductList.removeAt(i);
+                                                                                        print(emtyeProductList[i]['addProduct']);
+                                                                                      }
                                                                                     }
-                                                                                setState(() {
+                                                                                  }
+                                                                                  total=0;
+                                                                                  for(int i=0;i<emtyeProductList.length;i++)
+                                                                                  {
+                                                                                    total=total+emtyeProductList[i]['addCart'];
+                                                                                  }
                                                                                 });
                                                                               },
                                                                               child: Container(
-                                                                                color: Colors.red,
                                                                                   child: const Icon(Icons.remove,color: Colors.white,),
                                                                               ),
                                                                             ),
@@ -404,7 +418,7 @@ class _DisplayPageState extends State<DisplayPage> {
         color: colorZomatoAll,
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context).pushNamed('/');
+            Navigator.of(context).pushNamed('/cart');
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

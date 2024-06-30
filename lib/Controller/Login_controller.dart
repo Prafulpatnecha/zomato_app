@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zomato/home/home_screen/homepage.dart';
-import '../Profile_Screen/Profile_Screen.dart';
 import '../Firebase/FirebaseService.dart';
 import '../Login_Screen/Login_Page.dart';
 
@@ -20,6 +19,8 @@ class LoginController extends GetxController {
   void _initAsync() async {
     await SkipLoginPage();
   }
+
+
 
   Future<void> login() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();

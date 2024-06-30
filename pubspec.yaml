@@ -45,7 +45,6 @@ dependencies:
   shared_preferences: ^2.2.3
   get: ^4.6.6
   equal_space: ^0.0.8
-  otp_autofill: ^3.0.2
   carousel_slider: ^4.2.1
   dotted_line: ^3.2.2
 

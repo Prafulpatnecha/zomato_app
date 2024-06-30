@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:zomato/Splash_Screen/splash_screen.dart';
+import 'Controller/routes.dart';
 import 'Firebase/firebase_options.dart';
 
 Future<void> main() async {
@@ -26,14 +27,12 @@ class Zomato_Clone extends StatefulWidget {
 }
 
 class _Zomato_CloneState extends State<Zomato_Clone> {
-  User? user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-    '/' : (context) => SplashScreen(),
-    },
+      initialRoute: '/home',
+      routes: AppRoutes.routes,
     );
   }
 }
