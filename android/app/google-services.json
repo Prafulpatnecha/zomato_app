@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "343984419001",
+    "project_id": "loginzomato-98ab9",
+    "storage_bucket": "loginzomato-98ab9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343984419001:android:99c043b97581991b45ab68",
+        "android_client_info": {
+          "package_name": "com.example.zomato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343984419001-745r7ajabtr6gq6li7t64egnoro52hk9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zomato",
+            "certificate_hash": "36235944be292add89a97e080b17d6ac9fea043f"
+          }
+        },
+        {
+          "client_id": "343984419001-u3hsahqmablln71h0eitrtoh7j92lpha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEHzUnyFW2RS0Um8NAnakPqmbJpaE989Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343984419001-u3hsahqmablln71h0eitrtoh7j92lpha.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "343984419001-32tnjsov35tlualptng155ib2k9s357o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zomato"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
