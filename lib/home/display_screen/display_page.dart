@@ -225,7 +225,8 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                       total=0;
                                                                       for(int i=0;i<emtyeProductList.length;i++)
                                                                       {
-                                                                        total=emtyeProductList[i]['addCart']+total;
+                                                                        int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                        total+=point;
                                                                       }
                                                                       // print(emtyeProductList[0]['addProduct']);
                                                                       // productDetailsListJoin[index]['addProduct']=false;
@@ -301,14 +302,16 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                             InkWell(
                                                                               onTap: () {
                                                                                 setState(() {
-                                                                                  total=0;
+
                                                                                   productDetailsListJoin[index]['quantity']=productDetailsListJoin[index]['quantity']+1;
                                                                                   productDetailsListJoin[index]['addProduct']=true;
                                                                                   productDetailsListJoin[index]['addCart']=productDetailsListJoin[index]['addCart']+productDetailsListJoin[index]['productPrice'];
+                                                                                  total=0;
                                                                                   for(int i=0;i<emtyeProductList.length;i++)
-                                                                                    {
-                                                                                      total=total+emtyeProductList[i]['addCart'];
-                                                                                    }
+                                                                                  {
+                                                                                    int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                                    total+=point;
+                                                                                  }
                                                                                   // productListModelUseJoin!.foodListDetails[index].quantity=productListModelUseJoin!.foodListDetails[index].quantity!.toInt()+1;
                                                                                   // productListModelUseJoin!.foodListDetails[index].addProduct=true;
                                                                                   // productListModelUseJoin!.foodListDetails[index].addCart=(productListModelUseJoin!.foodListDetails[index].addCart!+productListModelUseJoin!.foodListDetails[index].productPrice!.toInt());
@@ -345,7 +348,8 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                                   total=0;
                                                                                   for(int i=0;i<emtyeProductList.length;i++)
                                                                                   {
-                                                                                    total=total+emtyeProductList[i]['addCart'];
+                                                                                    int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                                    total+=point;
                                                                                   }
                                                                                 });
                                                                               },

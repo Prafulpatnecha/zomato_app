@@ -190,7 +190,6 @@ class _CartPageState extends State<CartPage> {
                                                 0)
                                             ? GestureDetector(
                                                 onTap: () {
-                                                  total=0;
                                                   setState(() {
                                                     emtyeProductList[index]
                                                             ['quantity'] =
@@ -206,8 +205,12 @@ class _CartPageState extends State<CartPage> {
                                                     emtyeProductList.add(
                                                         emtyeProductList[
                                                             index]);
-                                                    total=total+emtyeProductList[index]['addCart'];
-
+                                                    total=0;
+                                                    for(int i=0;i<emtyeProductList.length;i++)
+                                                    {
+                                                      int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                      total+=point;
+                                                    }
                                                     // print(emtyeProductList[0]['addProduct']);
                                                     // productDetailsListJoin[index]['addProduct']=false;
                                                     // print(emtyeProductList[0]['addProduct']);
@@ -336,8 +339,8 @@ class _CartPageState extends State<CartPage> {
                                                                 total=0;
                                                                 for(int i=0;i<emtyeProductList.length;i++)
                                                                 {
-                                                                  // total=total+emtyeProductList[i]['addCart'];
-                                                                  total=total+emtyeProductList[i]['addCart'];
+                                                                  int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                  total+=point;
                                                                 }
                                                                 // productListModelUseJoin!.foodListDetails[index].quantity=productListModelUseJoin!.foodListDetails[index].quantity!.toInt()+1;
                                                                 // productListModelUseJoin!.foodListDetails[index].addProduct=true;
@@ -399,7 +402,8 @@ class _CartPageState extends State<CartPage> {
                                                                 total=0;
                                                                 for(int i=0;i<emtyeProductList.length;i++)
                                                                 {
-                                                                  total=total+emtyeProductList[i]['addCart'];
+                                                                  int point=emtyeProductList[i]['productPrice']*emtyeProductList[i]['quantity'];
+                                                                  total+=point;
                                                                 }
                                                                 // if(emtyeProductList[index]['quantity']==0)
                                                                 // {
@@ -491,7 +495,7 @@ class _CartPageState extends State<CartPage> {
     );
   }
 }
-double total=0;
+var total=0;
 // Scaffold(
 // appBar: AppBar(
 // leading: IconButton(
