@@ -321,32 +321,37 @@ class _HomePageState extends State<MainLoinPage> {
                   )),
               Container(
                   // margin: EdgeInsets.symmetric(vertical: 25),
-                  width: screenWidth / 2,
+                  // width: screenWidth / 2,
                   alignment: Alignment.center,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Terms of Service',
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 11,
+                            decoration: TextDecoration.underline,
                             color: Colors.black54),
                         textAlign: TextAlign.center,
                       ),
+                      SizedBox(width: 5,),
                       Text(
                         'Privacy Policy',
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 10,
+                            decoration: TextDecoration.underline,
                             color: Colors.black54),
                         textAlign: TextAlign.center,
                       ),
+                      SizedBox(width: 5,),
                       Text(
                         'Content Policy',
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 10,
+                            decoration: TextDecoration.underline,
                             color: Colors.black54),
                         textAlign: TextAlign.center,
                       )
