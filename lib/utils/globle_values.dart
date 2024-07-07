@@ -11,3 +11,4 @@ List emtyeProductList=[];
 bool boolColorTabBar=true;
 bool fastFindBool=false;
 bool tabCreateBool=false;
+Map totalBillMap={};

@@ -470,24 +470,56 @@ class _CartPageState extends State<CartPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 140,
+        height: 150,
         color: colorZomatoAll,
         child: GestureDetector(
           onTap: () {
             Navigator.of(context).pushNamed('/order');
           },
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Total Amount : ',style: TextStyle(color: Colors.white,fontFamily: fontBold,fontSize: 18),),
-                    Text(total.toString(),style: TextStyle(color: Colors.white,fontFamily: fontBold),),
-                  ],
-                )
-              ],
+          child: Container(
+            height: 150,
+            width: double.infinity,
+            color: colorZomatoAll,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Total Amount : ',style: TextStyle(color: Colors.white,fontFamily: fontBold,fontSize: 18),),
+                      Text(total.toString(),style: TextStyle(color: Colors.white,fontFamily: fontBold),),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('GST 5 Per% :',style: TextStyle(color: Colors.white,fontFamily: fontBold,fontSize: 18),),
+                      Text((total/100*5).toString(),style: TextStyle(color: Colors.white,fontFamily: fontBold),),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Delivery Charge :',style: TextStyle(color: Colors.white,fontFamily: fontBold,fontSize: 18),),
+                      Text((total<846)?'10':'Free Delivery',style: TextStyle(color: Colors.white,fontFamily: fontBold),),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Total Bill :',style: TextStyle(color: Colors.white,fontFamily: fontBold,fontSize: 18),),
+                      Text((total<846)?(total-(total/100*5)+10).toString():(total-(total/100*5)).toString()+'/-10',style: TextStyle(color: Colors.white,fontFamily: fontBold),),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Tap To Payment Screen Now Bill Pay',style: TextStyle(color: Colors.white,fontFamily: fontBold,fontSize: 18,fontWeight: FontWeight.bold),),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -496,6 +528,8 @@ class _CartPageState extends State<CartPage> {
   }
 }
 var total=0;
+var gst=0;
+String iconR='₹';
 // Scaffold(
 // appBar: AppBar(
 // leading: IconButton(

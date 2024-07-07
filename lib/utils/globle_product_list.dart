@@ -1,3 +1,22 @@
+List imageOnlyRestaurant=[
+  {
+    'name':'5 Star Restaurant',
+    'cafeImage': 'assets/image/cafe/c(32).jpg',
+  },
+  {
+    'name':'Kale Me Crazy',
+    'cafeImage': 'assets/image/cafe/c(28).jpg',
+  },
+  {
+    'name':'Happy Grill-more',
+    'cafeImage': 'assets/image/cafe/c(27).jpg',
+  },
+  {
+    'name':'Premium Restaurant',
+    'cafeImage': 'assets/image/cafe/c(34).jpg',
+  },
+];
+
 // [
 // 1. Culinary Elegance Bistro
 //
@@ -103,7 +122,7 @@ List productDetailsList=[
     'rating':3.0,
     'ratingPeople':56,
     'state':'Gujarat',
-    'cafeImage': 'assets/image/cafe/c(7).jpg',
+    'cafeImage': 'assets/image/cafe/c(20).jpg',
   },
   {
     'productNo':8,
@@ -175,7 +194,7 @@ List productDetailsList=[
     'rating':8.6,
     'ratingPeople':111,
     'state':'Gujarat',
-    'cafeImage': 'assets/image/cafe/c(15).jpg',
+    'cafeImage': 'assets/image/cafe/c(30).jpg',
   },
 ];
 // [

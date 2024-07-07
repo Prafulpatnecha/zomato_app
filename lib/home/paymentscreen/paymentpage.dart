@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zomato/utils/color.dart';
 
 
 class Order_Placed extends StatefulWidget {
@@ -19,8 +20,10 @@ class _Order_PlacedState extends State<Order_Placed> {
               decoration: BoxDecoration(
                   gradient:
                   RadialGradient(center: Alignment.topLeft, radius: 1,colors: [
-                    Color(0xff32343b),
-                    Color(0xff1c1e22),
+                    // Color(0xff32343b),
+                    // Color(0xff1c1e22),
+                    colorZomatoAll,
+                    colorZomato,
                   ])),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

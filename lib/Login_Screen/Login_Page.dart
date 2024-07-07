@@ -25,8 +25,8 @@ class _HomePageState extends State<MainLoinPage> {
 
   LoginController loginController = Get.put(LoginController());
   User? user = FirebaseAuth.instance.currentUser;
-  final countryPicker = FlCountryCodePicker(countryTextStyle: TextStyle(fontFamily: fontLight,fontWeight: FontWeight.w600),dialCodeTextStyle: TextStyle(fontFamily: fontLight,fontWeight: FontWeight.w600,fontSize: 15),searchBarTextStyle: TextStyle(fontFamily: fontLight,),searchBarDecoration: InputDecoration(hintText: 'Search by country name',prefixIcon: Icon(Icons.search),focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red,width: 2),borderRadius: BorderRadius.circular(10),),border: OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(color: Colors.grey),)),title: Text(''),);
-  CountryCode countryCode = CountryCode(
+  final countryPicker = FlCountryCodePicker(countryTextStyle: TextStyle(fontFamily: fontLight,fontWeight: FontWeight.w600),dialCodeTextStyle: TextStyle(fontFamily: fontLight,fontWeight: FontWeight.w600,fontSize: 15),searchBarTextStyle: TextStyle(fontFamily: fontLight,),searchBarDecoration: InputDecoration(hintText: 'Search by country name',prefixIcon: const Icon(Icons.search),focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.red,width: 2),borderRadius: BorderRadius.circular(10),),border: OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: const BorderSide(color: Colors.grey),)),title: const Text(''),);
+  CountryCode countryCode = const CountryCode(
     name: 'India',
     code: 'IN',
     dialCode: '+91',
@@ -46,7 +46,7 @@ class _HomePageState extends State<MainLoinPage> {
               Container(
                 width: screenWidth,
                 height: screenHeight / 2.2,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
                         'assets/main.jpg',
@@ -70,15 +70,15 @@ class _HomePageState extends State<MainLoinPage> {
                   )),
               Row(
                 children: [
-                  SizedBox(width: 15,),
-                  Expanded(child: Divider()),
+                  const SizedBox(width: 15,),
+                  const Expanded(child: Divider()),
                   Text(
                     '  Log in or sign up  ',
                     style:
                         TextStyle(fontFamily: fontLight,color: Colors.grey.shade700,fontWeight: FontWeight.w600,),
                   ),
-                  Expanded(child: Divider()),
-                  SizedBox(width: 15,),
+                  const Expanded(child: Divider()),
+                  const SizedBox(width: 15,),
                 ],
               ),
               Row(
@@ -87,7 +87,7 @@ class _HomePageState extends State<MainLoinPage> {
                     child: Container(
                       width: screenWidth,
                       height: 50,
-                      margin: EdgeInsets.only(left: 15, right: 0, top: 15),
+                      margin: const EdgeInsets.only(left: 15, right: 0, top: 15),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: Colors.grey)),
@@ -104,10 +104,10 @@ class _HomePageState extends State<MainLoinPage> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(width: 8.0),
+                            const SizedBox(width: 8.0),
                             if (countryCode != null) countryCode!.flagImage(),
-                            SizedBox(width: 8.0),
-                            Icon(Icons.arrow_drop_down),
+                            const SizedBox(width: 8.0),
+                            const Icon(Icons.arrow_drop_down),
                           ],
                         ),
                       ),
@@ -118,11 +118,11 @@ class _HomePageState extends State<MainLoinPage> {
                     child: Container(
                       width: screenWidth,
                       height: 50,
-                      padding: EdgeInsets.symmetric(horizontal: 13),
+                      padding: const EdgeInsets.symmetric(horizontal: 13),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: Colors.grey)),
-                      margin: EdgeInsets.only(right: 15, left: 10, top: 15),
+                      margin: const EdgeInsets.only(right: 15, left: 10, top: 15),
                       alignment: Alignment.center,
                       child: Row(
                         children: [
@@ -143,7 +143,7 @@ class _HomePageState extends State<MainLoinPage> {
                                 fontWeight: FontWeight.w600,
                                 letterSpacing: 1,
                               ),
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                   hintText: 'Enter Mobile Number',
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide.none,
@@ -180,12 +180,12 @@ class _HomePageState extends State<MainLoinPage> {
                 child: Container(
                   width: screenWidth,
                   height: 50,
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.red),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'Continue',
                     style: TextStyle(
                         color: Colors.white,
@@ -197,18 +197,18 @@ class _HomePageState extends State<MainLoinPage> {
               ),
               Row(
                 children: [
-                  SizedBox(width: 15,),
-                  Expanded(child: Divider()),
+                  const SizedBox(width: 15,),
+                  const Expanded(child: Divider()),
                   Text(
                     '  or  ',
                     style:
                     TextStyle(fontFamily: fontLight,color: Colors.grey.shade700,fontWeight: FontWeight.w600,),
                   ),
-                  Expanded(child: Divider()),
-                  SizedBox(width: 15,),
+                  const Expanded(child: Divider()),
+                  const SizedBox(width: 15,),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -217,7 +217,7 @@ class _HomePageState extends State<MainLoinPage> {
                   Container(
                     width: 50,
                     height: 50,
-                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                    margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.grey.shade300)),
@@ -233,7 +233,7 @@ class _HomePageState extends State<MainLoinPage> {
                   Container(
                     width: 50,
                     height: 50,
-                    margin: EdgeInsets.only(
+                    margin: const EdgeInsets.only(
                       right: 10,
                       left: 10,
                     ),
@@ -250,11 +250,11 @@ class _HomePageState extends State<MainLoinPage> {
                             width: double.infinity,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.white),
                             child: Padding(
-                              padding: EdgeInsets.all(20),
+                              padding: const EdgeInsets.all(20),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Spacer(),
+                                  const Spacer(),
                                   Container(
                                     width: double.infinity,
                                     height: 50,
@@ -262,14 +262,14 @@ class _HomePageState extends State<MainLoinPage> {
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Brand(Brands.facebook,colorFilter: ColorFilter.srgbToLinearGamma(),),
+                                        Brand(Brands.facebook,colorFilter: const ColorFilter.srgbToLinearGamma(),),
                                         Text(' Continue With Facebook',
                                           style:
                                           TextStyle(fontFamily: fontLight,color: Colors.grey.shade700,fontWeight: FontWeight.w600,letterSpacing: 1.5),)
                                       ],
                                     ),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   Container(
                                     width: double.infinity,
                                     height: 50,
@@ -277,14 +277,14 @@ class _HomePageState extends State<MainLoinPage> {
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Icon(EvaIcons.email_outline),
+                                        const Icon(EvaIcons.email_outline),
                                         Text(' Continue With Email',
                                           style:
                                           TextStyle(fontFamily: fontLight,color: Colors.grey.shade700,fontWeight: FontWeight.w600,letterSpacing: 1.5),)
                                       ],
                                     ),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
 
                                 ],
                               ),
@@ -295,7 +295,7 @@ class _HomePageState extends State<MainLoinPage> {
                         //   builder: (context) => CountryCodePickerExample(verificationid: verificationid,),
                         // ));
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.more_horiz_rounded,
                         color: Colors.black,
                         size: 30,
@@ -304,14 +304,14 @@ class _HomePageState extends State<MainLoinPage> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
                   // margin: EdgeInsets.symmetric(vertical: 10),
                   width: screenWidth / 1.4,
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'By continuing, you agree to our',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -323,7 +323,7 @@ class _HomePageState extends State<MainLoinPage> {
                   // margin: EdgeInsets.symmetric(vertical: 25),
                   // width: screenWidth / 2,
                   alignment: Alignment.center,
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
@@ -361,7 +361,7 @@ class _HomePageState extends State<MainLoinPage> {
           ),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 35),
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 35),
             height: 60,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -384,8 +384,8 @@ class _HomePageState extends State<MainLoinPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  margin: EdgeInsets.only(top: 10, left: 15),
-                                  child: Text(
+                                  margin: const EdgeInsets.only(top: 10, left: 15),
+                                  child: const Text(
                                     'Choose your language',
                                     style: TextStyle(
                                         fontSize: 20,
@@ -393,11 +393,11 @@ class _HomePageState extends State<MainLoinPage> {
                                         letterSpacing: 1),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(
+                                  margin: const EdgeInsets.only(
                                       left: 12, right: 12, top: 4),
                                   width: double.infinity,
                                   height: 85,
@@ -416,7 +416,7 @@ class _HomePageState extends State<MainLoinPage> {
                                           });
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         'English',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
@@ -426,7 +426,7 @@ class _HomePageState extends State<MainLoinPage> {
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(
+                                  margin: const EdgeInsets.only(
                                       left: 12, right: 12, top: 4),
                                   width: double.infinity,
                                   height: 85,
@@ -446,7 +446,7 @@ class _HomePageState extends State<MainLoinPage> {
                                           upadate();
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         'ગુજરાતી',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
@@ -456,7 +456,7 @@ class _HomePageState extends State<MainLoinPage> {
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(
+                                  margin: const EdgeInsets.only(
                                       left: 12, right: 12, top: 4),
                                   width: double.infinity,
                                   height: 85,
@@ -475,7 +475,7 @@ class _HomePageState extends State<MainLoinPage> {
                                           });
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         'हिंदी',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
@@ -485,7 +485,7 @@ class _HomePageState extends State<MainLoinPage> {
                                   ),
                                 ),
                                 Container(
-                                  margin: EdgeInsets.only(
+                                  margin: const EdgeInsets.only(
                                       left: 12, right: 12, top: 4),
                                   width: double.infinity,
                                   height: 85,
@@ -504,7 +504,7 @@ class _HomePageState extends State<MainLoinPage> {
                                           });
                                         },
                                       ),
-                                      Text(
+                                      const Text(
                                         'मराठी',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
@@ -520,12 +520,12 @@ class _HomePageState extends State<MainLoinPage> {
                                   child: Container(
                                     width: double.infinity,
                                     height: 50,
-                                    margin: EdgeInsets.all(15),
+                                    margin: const EdgeInsets.all(15),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         color: Colors.red),
                                     alignment: Alignment.center,
-                                    child: Text(
+                                    child: const Text(
                                       'Select',
                                       style: TextStyle(
                                           color: Colors.white,
@@ -541,7 +541,7 @@ class _HomePageState extends State<MainLoinPage> {
                         },
                       );
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.g_translate_outlined,
                       color: Colors.white60,
                       size: 20,
@@ -550,7 +550,7 @@ class _HomePageState extends State<MainLoinPage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),));
                   },
                   child: Container(
                       width: 60,
