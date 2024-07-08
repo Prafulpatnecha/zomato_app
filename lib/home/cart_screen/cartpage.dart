@@ -293,7 +293,7 @@ class _CartPageState extends State<CartPage> {
                                                 height: 45,
                                                 width: 90,
                                                 decoration: BoxDecoration(
-                                                  color: Colors.pink,
+                                                  color: colorZomatoAll,
                                                   borderRadius:
                                                       BorderRadius.circular(10),
                                                   // border: Border.all(

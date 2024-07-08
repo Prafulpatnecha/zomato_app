@@ -237,10 +237,10 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                     height: 45,
                                                                     width: 90,
                                                                     decoration: BoxDecoration(
-                                                                    color: Colors.pink.shade50,
+                                                                    color: colorZomatoBluer,
                                                                       borderRadius: BorderRadius.circular(10),
                                                                       border: Border.all(
-                                                                        color: Colors.pink
+                                                                        color: colorZomatoAll
                                                                       ),
                                                                     ),
                                                                     child: Padding(
@@ -249,10 +249,10 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                         children: [
                                                                           Stack(
                                                                             children: [
-                                                                              const Row(
+                                                                              Row(
                                                                                 mainAxisAlignment: MainAxisAlignment.end,
                                                                                 children: [
-                                                                                  Icon(Icons.add,size: 15,color: Colors.pink,),
+                                                                                  Icon(Icons.add,size: 15,color: colorZomatoAll,),
                                                                                 ],
                                                                               ),
                                                                           Align(
@@ -261,7 +261,7 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                               children: [
                                                                                 const SizedBox(height: 5,),
                                                                                 Container(
-                                                                                  child: Text('ADD',style: TextStyle(color: Colors.pink,fontSize: 20,fontFamily: fontBold),),
+                                                                                  child: Text('ADD',style: TextStyle(color: colorZomatoAll,fontSize: 20,fontFamily: fontBold),),
                                                                                 ),
                                                                               ],
                                                                             ),
@@ -285,7 +285,7 @@ class _DisplayPageState extends State<DisplayPage> {
                                                                   height: 45,
                                                                   width: 90,
                                                                   decoration: BoxDecoration(
-                                                                    color: Colors.pink,
+                                                                    color: colorZomatoAll,
                                                                     borderRadius: BorderRadius.circular(10),
                                                                     // border: Border.all(
                                                                     //     color: Colors.pink

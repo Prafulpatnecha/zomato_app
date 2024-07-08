@@ -28,6 +28,9 @@ class _Zomato_CloneState extends State<Zomato_Clone> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       routes: AppRoutes.routes,

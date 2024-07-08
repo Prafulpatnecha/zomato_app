@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:equal_space/equal_space.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zomato/utils/sliderfuntion_variable.dart';
 import '../../Profile_Screen/Profile_Screen.dart';
@@ -211,7 +212,9 @@ class _HomePageState extends State<HomePage> {
                                              builder: (BuildContext context) => const Extra(),
                                            ));
                                      },
-                                     child: (user!.photoURL!=null)?Container(
+                                     child:
+                                     // (user!.photoURL==null)?
+                                     Container(
                                        decoration: BoxDecoration(
                                            color: Colors.white,
                                            borderRadius: BorderRadius.circular(50),
@@ -223,24 +226,26 @@ class _HomePageState extends State<HomePage> {
                                                  spreadRadius: -9,
                                                  blurStyle: BlurStyle.solid)
                                            ]),
-                                       child: const CircleAvatar(
+                                       child: CircleAvatar(
                                          radius: 20,
-                                         backgroundImage: NetworkImage(user!.photoURL!),
+                                         // backgroundImage: NetworkImage(user!.photoURL!),
                                        ),
-                                     ):Container(
-                                       decoration: BoxDecoration(
-                                         color: Colors.blue.shade50,
-                                         shape: BoxShape.circle,
-                                       ),
-                                       height: 40,
-                                       width: 40,
-                                       alignment: Alignment.center,
-                                       child: const Text(
-                                         'P',
-                                         style: TextStyle(
-                                             color: Colors.blue, fontSize: 20),
-                                       ),
-                                     ),
+                                     )
+                                           // :
+                                     // Container(
+                                     //   decoration: BoxDecoration(
+                                     //     color: Colors.blue.shade50,
+                                     //     shape: BoxShape.circle,
+                                     //   ),
+                                     //   height: 40,
+                                     //   width: 40,
+                                     //   alignment: Alignment.center,
+                                     //   child: const Text(
+                                     //     'P',
+                                     //     style: TextStyle(
+                                     //         color: Colors.blue, fontSize: 20),
+                                     //   ),
+                                     // ),
                                    ),
                                  ],
                                ),
@@ -362,17 +367,24 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     //  TODO CODE BY OMG CREATION ADS BANNER <-------------------------
-                    Container(
-                      margin: const EdgeInsets.only(left: 15,right: 15,),
-                       width: double.infinity,
-                       height: 140,
-                      decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                        image: const DecorationImage(image: NetworkImage('https://play-lh.googleusercontent.com/zXFfe-S5ORjMmioY34PiRUkduJPG3MTPFUbmFq6j2WyG86IADRUxmzHN5Hdh2KxTKSw=h500'),fit: BoxFit.cover),
-                        borderRadius: BorderRadius.circular(10)
-                          
-                      ),
-                     ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          bottomSheetBool=true;
+                        });
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(left: 15,right: 15,),
+                         width: double.infinity,
+                         height: 140,
+                        decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                          image: const DecorationImage(image: NetworkImage('https://play-lh.googleusercontent.com/zXFfe-S5ORjMmioY34PiRUkduJPG3MTPFUbmFq6j2WyG86IADRUxmzHN5Hdh2KxTKSw=h500'),fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(10)
+
+                        ),
+                       ),
+                    ),
                     //  TODO CODE BY OMG CREATION DIVIDER <-------------------------
                     Row(
                       children: [
@@ -1474,6 +1486,40 @@ class _HomePageState extends State<HomePage> {
             ),//todo delivery tab
           ],
         ),
+        bottomSheet: (bottomSheetBool==true)?Container(
+          height: 200,
+          color: colorZomatoBluer,
+          child: GridView.builder(itemCount: colorList.length,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4), itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    colorZomato=colorList[index]['colorZomato'];
+                    colorZomatoBluer=colorList[index]['colorZomatoBluer'];
+                    colorZomatoAll=colorList[index]['colorZomatoAll'];
+                    bottomSheetBool=false;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomRight,
+                      end: Alignment.topLeft,
+                      colors: [
+                        colorList[index]['colorZomato'],
+                        colorList[index]['colorZomatoBluer'],
+                        colorList[index]['colorZomatoAll'],
+                        colorList[index]['colorZomatoAll'],
+                      ]
+                    )
+                  ),
+                ),
+              )
+            );
+          },),
+        ):null,
       ),
     );
   }
