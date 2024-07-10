@@ -1007,7 +1007,7 @@ class _HomePageState extends State<HomePage> {
                                                 spreadRadius: -9,
                                                 blurStyle: BlurStyle.solid)
                                           ]),
-                                      child: const CircleAvatar(
+                                      child: CircleAvatar(
                                         radius: 20,
                                         // backgroundImage: NetworkImage(user!.photoURL!),
                                       ),

@@ -265,7 +265,7 @@ List productDetailsListJoin=[
     'addProduct': false,
     'addCart': 0,
     'quantity': 0,
-    'image': 'assets/image/custard/cd(1).jpeg',
+    'image': 'assets/image/custard/cd(31).jpeg',
   },
   {
     'productNo':1,
@@ -378,7 +378,7 @@ List productDetailsListJoin=[
     'addProduct': false,
     'addCart': 0,
     'quantity': 0,
-    'image': 'assets/image/biryani/bi(8).jpg',
+    'image': 'assets/image/biryani/bi(19).jpg',
   },
   {
     'productNo':9, //1-15

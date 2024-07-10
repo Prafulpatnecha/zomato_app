@@ -18,8 +18,8 @@ class FirebaseService {
         accessToken: googleSignInAuthentication.accessToken,
         idToken: googleSignInAuthentication.idToken,
       );
-      await _auth.signInWithCredential(credential);
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+      await _auth.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       print(e.message);
       throw e;
